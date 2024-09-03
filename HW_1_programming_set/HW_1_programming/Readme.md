@@ -2,12 +2,12 @@
 
 ## Submission instructions
 
-* Due date and time: February 7th (Tuesday) 2023, 23:59 ET
+* Due date and time: September 17th (Tuesday) 2024, 23:59 ET
 
 * Carmen submission: 
 Submit a .zip file named `name.number.zip` (e.g., `chao.209.zip`) with the following files
-  - your completed python script `Regression.py` (for regression - Question 1)
-  - your completed python script `KNN.py` (for KNN - Question 2)
+  - your completed Python script `Regression.py` (for regression - Question 1)
+  - your completed Python script `KNN.py` (for KNN - Question 2)
   - your 8 generated results for Question 1: `linear_1.png`, `quadratic_2.png`, `unknown_5.png`, `unknown_noise_5.png`, `Results_linear_1.npz`, `Results_quadratic_2.npz`, `Results_unknown_5.npz`, and `Results_unknown_noise_5.npz`.
   - your report in a PDF named `name.number.pdf`.
 
@@ -17,7 +17,7 @@ Submit a .zip file named `name.number.zip` (e.g., `chao.209.zip`) with the follo
 
 * Download or clone this repository.
 
-* You will see four python scripts: `Regression.py`, `KNN.py`, `feature_normalization.py`, and `numpy_example.py`.
+* You will see four Python scripts: `Regression.py`, `KNN.py`, `feature_normalization.py`, and `numpy_example.py`.
 
 * You will see a `data` folder, which contains `mnist_test.csv`, `Linear.npz`, `Quadratic.npz`, `Unknown.npz`, and `Unknown_noise.npz`.
 
@@ -35,7 +35,7 @@ Submit a .zip file named `name.number.zip` (e.g., `chao.209.zip`) with the follo
 
 * You will be using [NumPy] (https://numpy.org/), and your code will display your results with [matplotlib] (https://matplotlib.org/). If your computer does not have them, you may install them with the following commands:
   - for NumPy: <br/>
-    do `sudo apt install python3-pip` or `pip3 install numpy`. If you are using Windows command line, you may try `setx PATH "%PATH%;C:\Python34\Scripts"`, followed by `py -3 -mpip install numpy`.
+    do `sudo apt install python3-pip` or `pip3 install numpy`. If you are using the Windows command line, you may try `setx PATH "%PATH%;C:\Python34\Scripts"`, followed by `py -3 -mpip install numpy`.
 
   - for matplotlib: <br/>
     do `python3 -m pip install -U pip` and then `python3 -m pip install -U matplotlib`. If you are using the Windows command line, you may try `py -3 -mpip install -U pip` and then `py -3 -mpip install -U matplotlib`.
@@ -50,13 +50,13 @@ In this homework, you are to implement linear and nonlinear regression and KNN (
 
 * In Question 1, you will play with simple linear and quadratic data (x-axis is the feature variable; y-axis is the real-value label; each point is a data instance: red for training and blue for testing) and some other more complicated data.
 
-![Alt text](https://github.com/pujols/OSU_CSE_5523_2023SP/blob/main/HW_1_programming_set/HW_1_programming/for_display/linear_1.png)
+![Alt text](https://github.com/pujols/OSU_CSE_5523_2024AU/blob/main/HW_1_programming_set/HW_1_programming/for_display/linear_1.png)
 
-![Alt text](https://github.com/pujols/OSU_CSE_5523_2023SP/blob/main/HW_1_programming_set/HW_1_programming/for_display/quadratic_2.png)
+![Alt text](https://github.com/pujols/OSU_CSE_5523_2024AU/blob/main/HW_1_programming_set/HW_1_programming/for_display/quadratic_2.png)
 
 * In Question 2, you will play with the MNIST dataset (digit data).
 
-![Alt text](https://github.com/pujols/OSU_CSE_5523_2023SP/blob/main/HW_1_programming_set/HW_1_programming/for_display/Digits.png)
+![Alt text](https://github.com/pujols/OSU_CSE_5523_2024AU/blob/main/HW_1_programming_set/HW_1_programming/for_display/Digits.png)
 
 
 
@@ -66,9 +66,9 @@ In this homework, you are to implement linear and nonlinear regression and KNN (
 
 * If you are not familiar with Numpy, we recommend that you read this [tutorial] (https://cs231n.github.io/python-numpy-tutorial/) or some other tutorials online, and then play with some code to get familiar with it.
 
-* We have provided some useful Numpy operations that you may want to use in `numpy_example.py`. You may want to comment out all the lines first, and execute them one by one or in a group to see the results and the differences. You can run the command `python3 numpy_example.py`.
+* We have provided some useful Numpy operations that you may want to use in `numpy_example.py`. You may want to comment out all the lines first and execute them one by one or in a group to see the results and the differences. You can run the command `python3 numpy_example.py`.
 
-* We also provide another python script `feature_normalization.py`, which will guide you through L2 normalization, covariance matrices, z-score, and whitening. You may find some code here helpful for your implementation in this homework or other homework. You can run the command `python3 feature_normalization.py`.
+* We also provide another Python script `feature_normalization.py`, which will guide you through L2 normalization, covariance matrices, z-score, and whitening. You may find some code here helpful for your implementation in this homework or other homework. You can run the command `python3 feature_normalization.py`.
 
 * In `Regression.py` and `KNN.py`, we also provide some more instructions and hints for what functions or operations you may want to use.
 
@@ -84,7 +84,7 @@ In this homework, you are to implement linear and nonlinear regression and KNN (
 
 * There are many sub-functions in `Regression.py`. You can ignore all of them but `def linear_regression(X, Y)` and `def main(args)`. In `main(args)`, you will see a general pipeline of machine learning: <br/>
   - Loading data: `X_original, Y_original = data_loader(args)`, in which `X_original` is a 1-by-N matrix (numpy array) and each column is a data instance. You can type `X[:, 0]` to extract the "first" data instance from `X_original`. (Caution! python and numpy's indices start from 0. That is, to get the first element in a vector, the index is 0 rather than 1.) <br/>
-  - Data separation: Separate data into training, validation, and test set.
+  - Data separation: Separate data into training, validation, and test sets.
   - Training_and_validation: the for loop `for poly in range(1, 12)` will try different polynomial feature transforms and check which one leads to the smallest validation error.
   - Feature transform: `X_train = polynomial_transform(np.copy(X_original_train), int(poly))` extends each column of `X` to its polynomial representation. For example, given x, this transform will extends it to [x, x^2, ..., x^(int(poly))]^T.
   - Learning patterns: `w, b = linear_regression(X_train, Y_train)`, in which the code takes `X_train` and the desired labels `Y_train` as input and output the weights `w` and the bias `b`.
@@ -94,9 +94,9 @@ In this homework, you are to implement linear and nonlinear regression and KNN (
 
 You have two parts to implement in `Regression.py`:
 
-* The function `def linear_regression(X, Y)`: please go to the function and read the input format, output format, and the instructions carefully. You can assume that the actual inputs will follow the input format, and your goal is to generate the required numpy arrays (`w` and `b`), the weights and bias of linear regression. Please make sure that your results follow the required numpy array shapes. You are to implement your code between `### Your job 1 starts here ###` and `### Your job 1 ends here ###`. Please note that `1` has not been appended into `X`. 1. If you want to apply the closed-form solution directly, you have to append `1` into your data `X` (for every column). You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement them.
+* The function `def linear_regression(X, Y)`: please go to the function and read the input format, output format, and the instructions carefully. You can assume that the actual inputs will follow the input format, and your goal is to generate the required numpy arrays (`w` and `b`), i.e., the weights and the bias of linear regression. Please make sure that your results follow the required numpy array shapes. You are to implement your code between `### Your job 1 starts here ###` and `### Your job 1 ends here ###`. Please note that `1` has not been appended to `X`. 1. If you want to apply the closed-form solution directly, you have to append `1` into your data `X` (for every column). You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement them.
 
-* The decision of which polynomial degree to use via the validation process: please go to `def main(args)`. You are to implement your code between `### Your job 2 starts here ###` and and `### Your job 2 ends here ###`. You will see some instructions there. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement them.
+* The decision of which polynomial degree to use via the validation process: please go to `def main(args)`. You are to implement your code between `### Your job 2 starts here ###` and `### Your job 2 ends here ###`. You will see some instructions there. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement them.
 
 ## Auto grader:
 
@@ -120,17 +120,17 @@ This command will run linear regression on 1D linear data (the x-axis is the fea
 
 * Please run the following command<br/>
 `python3 Regression.py --data quadratic --polynomial 2 --display --save`<br/>
-This command will run linear regression on 1D quadratic data (the x-axis is the feature and the y-axis is the label). The code will produce polynomial = 2 representation for the data (i.e., `X` becomes 2-by-N). You will see the resulting `w` and `b` being displayed in your command line. You will also see the training (on red points) and test error (on blue points). 
+This command will run linear regression on 1D quadratic data (the x-axis is the feature and the y-axis is the label). The code will produce a polynomial = 2 representation for the data (i.e., `X` becomes 2-by-N). You will see the resulting `w` and `b` being displayed in your command line. You will also see the training (on red points) and test error (on blue points). 
 
 * The code will generate `quadratic_2.png` and `Results_quadratic_2.npz`, which you will include in your submission.
 
-* You may play with other commands by (1) removing `--save` (2) changing the `--polynomial 2` to a non-negative integer (e.g, 1, 3, ..., 12). You will see that, while larger values lead to smaller training error, the test error is not necessarily lower. For a very large value, the test error can go very large.
+* You may play with other commands by (1) removing `--save` (2) changing the `--polynomial 2` to a non-negative integer (e.g, 1, 3, ..., 12). You will see that, while larger values lead to smaller training errors, the test error is not necessarily lower. For a very large value, the test error can go very large.
 
 ## Play with different datasets (Task 3 - unknown degree data, 2/30 pts):
 
 * Please run the following command<br/>
 `python3 Regression.py --data unknown --polynomial 5 --display --save`<br/>
-This command will run linear regression on 1D data (the x-axis is the feature and the y-axis is the label). The code will produce polynomial = 5 representation for the data (i.e., `X` becomes 5-by-N). You will see the resulting `w` and `b` being displayed in your command line. You will also see the training (on red points) and test error (on blue points). 
+This command will run linear regression on 1D data (the x-axis is the feature and the y-axis is the label). The code will produce a polynomial = 5 representation for the data (i.e., `X` becomes 5-by-N). You will see the resulting `w` and `b` being displayed in your command line. You will also see the training (on red points) and test error (on blue points). 
 
 * The code will generate `unknown_5.png` and `Results_unknown_5.npz`, which you will include in your submission.
 
@@ -138,7 +138,7 @@ This command will run linear regression on 1D data (the x-axis is the feature an
 
 * Please run the following command<br/>
 `python3 Regression.py --data unknown_noise --polynomial 5 --display --save`<br/>
-This command will run linear regression on 1D data (the x-axis is the feature and the y-axis is the label), which is exactly the same as in Task 3 but with additional noise. The code will produce polynomial = 5 representation for the data (i.e., `X` becomes 5-by-N). You will see the resulting `w` and `b` being displayed in your command line. You will also see the training (on red points) and test error (on blue points). 
+This command will run linear regression on 1D data (the x-axis is the feature and the y-axis is the label), which is exactly the same as in Task 3 but with additional noise. The code will produce a polynomial = 5 representation for the data (i.e., `X` becomes 5-by-N). You will see the resulting `w` and `b` being displayed in your command line. You will also see the training (on red points) and test error (on blue points). 
 
 * The code will generate `unknown_noise_5.png` and `Results_unknown_noise_5.npz`, which you will include in your submission.
 
@@ -180,7 +180,7 @@ You have three parts to implement in `KNN.py`:
 * Please run the following command<br/>
 `python3 KNN.py`<br/>
 
-Please report `best_dis_metric`, `best_K`, `best_val_accuracy` , and `test_accuracy` in the PDF.
+Please report `best_dis_metric`, `best_K`, `best_val_accuracy`, and `test_accuracy` in the PDF.
 
 
 
